@@ -62,9 +62,13 @@ export default {
 
 <template>
     <div class="container">
-        <input type="text" placeholder="Cerca il tuo film/serieTv" v-model="store.search"
-            @keyup.enter="getMovie(), getSeries()">
-        <button @click="getMovie(), getSeries()" class="button"> Cerca</button>
+        <div class="row">
+            <img src="/img/logo-netflix.webp" alt="">
+            <input type="text" placeholder="Cerca il tuo film/serieTv" v-model="store.search"
+                @keyup.enter="getMovie(), getSeries()">
+            <button @click="getMovie(), getSeries()" class="button"> Cerca</button>
+        </div>
+
     </div>
 </template>
 
@@ -78,5 +82,19 @@ export default {
     background-color: cornflowerblue;
     border: none;
     border-radius: 25px;
+}
+
+.row {
+    padding: 20px;
+}
+
+img {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
 }
 </style>
