@@ -5,16 +5,31 @@ export default {
             type: Object,
             required: true,
         }
+    },
+    methods: {
+        getFlagImage(country) {
+            switch (country) {
+                case 'en':
+                    return '/img/uk.jpg'
+                case 'it':
+                    return '/img/ita.png'
+                case 'ja':
+                    return '/img/jap.png'
+                default:
+                    return ''
+            }
+        }
     }
 }
 </script>
 <template>
     <ul>
         <li>
+            <span>Film</span>
             <h2>{{ el.title }}</h2>
             <h2>{{ el.original_title }}</h2>
             <h3>{{ el.vote_average }}</h3>
-            <h4>{{ el.original_language }}</h4>
+            <img :src="getFlagImage(el.original_language)" alt="Flag">
         </li>
     </ul>
 </template>
