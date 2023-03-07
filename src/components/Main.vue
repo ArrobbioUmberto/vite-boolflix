@@ -2,9 +2,11 @@
 import store from '../store'
 import axios from 'axios'
 import Movies from './Movies.vue'
+import Tvseries from './Tvseries.vue'
 export default {
     components: {
-        Movies
+        Movies,
+        Tvseries
     },
     data() {
         return {
@@ -13,15 +15,15 @@ export default {
     },
     methods: {
 
-        computed: {
-            searchText() {
-                return this.store.search
-            }
-        },
-        watch: {
-            searchText(newvalue, Oldvalue) {
-                console.log('cambio di search', newvalue, Oldvalue)
-            }
+    },
+    computed: {
+        searchText() {
+            return this.store.search
+        }
+    },
+    watch: {
+        searchText(newvalue, Oldvalue) {
+            console.log('cambio di search', newvalue, Oldvalue)
         }
     }
 }
@@ -30,6 +32,7 @@ export default {
 <template>
     <div class="container">
         <Movies v-for="element in store.movie" :key="element.id" :el="element"></Movies>
+        <Tvseries v-for="series in store.series" :key="series.id" :Tvseries="series"></Tvseries>
     </div>
 </template>
 
