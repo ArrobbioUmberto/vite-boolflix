@@ -5,7 +5,8 @@ const store = reactive({
     search: '',
     movie: {},
     series: {},
-    vote: []
+    vote: [],
+    image: '',
 })
 export default store
 
