@@ -31,13 +31,33 @@ export default {
 
 <template>
     <div class="container">
-        <Movies v-for="element in store.movie" :key="element.id" :el="element"></Movies>
-        <Tvseries v-for="series in store.series" :key="series.id" :Tvseries="series"></Tvseries>
+        <div class="row">
+            <h1>Film</h1>
+            <Movies v-for="element in store.movie" :key="element.id" :el="element"></Movies>
+        </div>
+        <div class="row">
+            <h1>SerieTV</h1>
+            <Tvseries v-for="series in store.series" :key="series.id" :Tvseries="series"></Tvseries>
+        </div>
+
     </div>
 </template>
 
 <style lang="scss" scoped>
 img {
     width: 200px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+h1 {
+    width: 100%;
 }
 </style>
