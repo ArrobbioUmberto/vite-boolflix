@@ -16,22 +16,23 @@ export default {
                 case 'ja':
                     return '/img/jap.png'
                 default:
-                    return ''
+                    return '/img/world.jpg'
             }
         }
     }
 }
 </script>
 <template>
-    <ul>
-        <li>
-            <span>SerieTV</span>
-            <h2>{{ Tvseries.name }}</h2>
-            <h2>{{ Tvseries.original_name }}</h2>
-            <h3>{{ Tvseries.vote_average }}</h3>
-            <img :src="getFlagImage(Tvseries.original_language)" alt="Flag">
-        </li>
-    </ul>
+    <div class="col">
+        <ul>
+            <li>
+                <h2>{{ Tvseries.name }}</h2>
+                <h2>{{ Tvseries.original_name }}</h2>
+                <h3>{{ Tvseries.vote_average }}</h3>
+                <img :src="getFlagImage(Tvseries.original_language)" alt="Flag">
+            </li>
+        </ul>
+    </div>
 </template>
 <style lang="scss" scoped>
 li {
@@ -48,5 +49,16 @@ ul {
 span {
     font-size: 24px;
     font-weight: bold;
+}
+
+img {
+    width: 50px;
+}
+
+.col {
+    display: flex;
+    flex-basis: 20%;
+    align-items: center;
+    justify-content: flex-start;
 }
 </style>
