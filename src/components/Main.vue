@@ -1,8 +1,8 @@
 <script >
 import store from '../store'
-import axios from 'axios'
 import Movies from './Movies.vue'
 import Tvseries from './Tvseries.vue'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 export default {
     components: {
         Movies,
@@ -53,7 +53,7 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     color: white;
 }
 
