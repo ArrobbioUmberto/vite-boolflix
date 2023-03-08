@@ -30,7 +30,7 @@ export default {
                     :src="el.poster_path ? `https://image.tmdb.org/t/p/w342/${el.poster_path}` : '/img/default.webp'">
                 <h3>{{ el.title }}</h3>
                 <h3>{{ el.original_title }}</h3>
-                <h4>{{ el.vote_average }}</h4>
+                <h4>{{ Math.ceil(el.vote_average / 2) }}</h4>
                 <img class="flag" :src="getFlagImage(el.original_language)" alt="">
             </li>
         </ul>

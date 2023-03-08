@@ -30,7 +30,7 @@ export default {
                     :src="Tvseries.poster_path ? `https://image.tmdb.org/t/p/w342/${Tvseries.poster_path}` : '/img/default.webp'">
                 <h2>{{ Tvseries.name }}</h2>
                 <h2>{{ Tvseries.original_name }}</h2>
-                <h3>{{ Tvseries.vote_average }}</h3>
+                <h3>{{ Math.ceil(Tvseries.vote_average / 2) }}</h3>
                 <img :src="getFlagImage(Tvseries.original_language)" alt="Flag">
             </li>
         </ul>
