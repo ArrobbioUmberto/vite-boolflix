@@ -48,8 +48,8 @@ export default {
                     :src="Tvseries.poster_path ? `https://image.tmdb.org/t/p/w342/${Tvseries.poster_path}` : '/img/default.webp'">
                 <h2>{{ Tvseries.name }}</h2>
                 <h2>{{ Tvseries.original_name }}</h2>
-                <h3>{{ Math.ceil(Tvseries.vote_average / 2) }}</h3>
-                <div>
+                <div class="votation">
+                    <h3>{{ Math.ceil(Tvseries.vote_average / 2) }}</h3>
                     <span>
                         <i v-for="n in 5" :key="n" :class="['fa', 'fa-star', getStarIcon(n)]"></i>
                     </span>
@@ -60,6 +60,18 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
+.votation {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3,
+h4 {
+    margin: 5px;
+}
+
 .poster {
     width: 100%;
 }
