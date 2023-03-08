@@ -26,7 +26,8 @@ export default {
     <div class="col">
         <ul>
             <li>
-                <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${Tvseries.poster_path}`">
+                <img class="poster"
+                    :src="Tvseries.poster_path ? `https://image.tmdb.org/t/p/w342/${Tvseries.poster_path}` : '/img/default.webp'">
                 <h2>{{ Tvseries.name }}</h2>
                 <h2>{{ Tvseries.original_name }}</h2>
                 <h3>{{ Tvseries.vote_average }}</h3>
