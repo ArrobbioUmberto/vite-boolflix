@@ -26,15 +26,20 @@ export default {
     <div class="col">
         <ul>
             <li>
+                <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${el.poster_path}`" alt="">
                 <h3>{{ el.title }}</h3>
                 <h3>{{ el.original_title }}</h3>
                 <h4>{{ el.vote_average }}</h4>
-                <img :src="getFlagImage(el.original_language)" alt="Flag">
+                <img class="flag" :src="getFlagImage(el.original_language)" alt="">
             </li>
         </ul>
     </div>
 </template>
 <style lang="scss" scoped>
+.poster {
+    width: 100%;
+}
+
 li {
     list-style-type: none;
 }
@@ -51,7 +56,7 @@ span {
     font-weight: bold;
 }
 
-img {
+.flag {
     width: 50px;
 }
 

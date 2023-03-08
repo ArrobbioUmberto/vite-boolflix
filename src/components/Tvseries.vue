@@ -18,7 +18,7 @@ export default {
                 default:
                     return '/img/world.jpg'
             }
-        }
+        },
     }
 }
 </script>
@@ -26,6 +26,7 @@ export default {
     <div class="col">
         <ul>
             <li>
+                <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${Tvseries.poster_path}`">
                 <h2>{{ Tvseries.name }}</h2>
                 <h2>{{ Tvseries.original_name }}</h2>
                 <h3>{{ Tvseries.vote_average }}</h3>
@@ -35,6 +36,10 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
+.poster {
+    width: 100%;
+}
+
 li {
     list-style-type: none;
 }
