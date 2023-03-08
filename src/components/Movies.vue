@@ -60,16 +60,16 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
-h3,
-h4 {
-    margin: 5px;
-}
-
 .votation {
     display: flex;
     font-size: 24px;
     align-items: center;
     justify-content: space-between;
+}
+
+h3,
+h4 {
+    margin: 5px;
 }
 
 .poster {
