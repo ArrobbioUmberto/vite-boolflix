@@ -1,7 +1,6 @@
 <script >
 import store from '../store'
 import axios from 'axios'
-// import Movies from './Movies.vue'
 export default {
     components: {
         // Movies
@@ -27,8 +26,6 @@ export default {
                     console.log(res.data);
                     console.log(res.data.results);
                     this.store.movie = res.data.results;
-                    // this.store.vote = res.data.results.vote_average
-                    // console.log(res.data.results[].vote_average)
                 });
         },
         getSeries() {
@@ -46,8 +43,6 @@ export default {
                     console.log(res.data);
                     console.log(res.data.results);
                     this.store.series = res.data.results;
-                    // this.store.vote = res.data.results.vote_average
-                    // console.log(res.data.results[].vote_average)
                 });
         }
     },
