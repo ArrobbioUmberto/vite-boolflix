@@ -43,9 +43,11 @@ export default {
 <template>
     <div class="col">
         <ul>
-            <li>
+            <li class="poster-box">
                 <img class="poster"
                     :src="Tvseries.poster_path ? `https://image.tmdb.org/t/p/w342/${Tvseries.poster_path}` : '/img/default.webp'">
+            </li>
+            <li class="text-box">
                 <h2>{{ Tvseries.name }}</h2>
                 <h2>{{ Tvseries.original_name }}</h2>
                 <div class="votation">
@@ -54,12 +56,24 @@ export default {
                         <i v-for="n in 5" :key="n" :class="['fa', 'fa-star', getStarIcon(n)]"></i>
                     </span>
                 </div>
-                <img :src="getFlagImage(Tvseries.original_language)" alt="Flag">
+                <img class="flag" :src="getFlagImage(Tvseries.original_language)" alt="Flag">
+                <div class="overview">
+                    <p><b>Overview:{{ Tvseries.overview }}</b></p>
+                </div>
             </li>
         </ul>
     </div>
 </template>
 <style lang="scss" scoped>
+.overview {
+    height: 200px;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
 .votation {
     display: flex;
     font-size: 24px;
@@ -68,22 +82,44 @@ export default {
 }
 
 h3,
-h4 {
+h2 {
     margin: 5px;
 }
+
 
 .poster {
     width: 100%;
 }
 
+.poster-box {
+    height: 400px;
+}
+
+.text-box {
+    display: none;
+}
+
+ul:hover .poster-box {
+    display: none;
+}
+
+ul:hover .text-box {
+    display: block;
+}
+
 li {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
 }
 
 ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
     gap: 10px;
 }
 
@@ -92,7 +128,9 @@ span {
     font-weight: bold;
 }
 
-img {
+
+
+.flag {
     width: 50px;
 }
 
@@ -100,7 +138,6 @@ img {
     display: flex;
     flex-basis: 20%;
     align-items: center;
-    justify-content: flex-start;
 }
 
 .full {

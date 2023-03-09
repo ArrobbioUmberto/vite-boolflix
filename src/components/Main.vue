@@ -55,6 +55,8 @@ img {
     justify-content: space-between;
     align-items: flex-start;
     color: white;
+    gap: 30px;
+    margin: 50px 0;
 }
 
 h1 {
