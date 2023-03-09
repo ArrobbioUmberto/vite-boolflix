@@ -88,6 +88,7 @@ h4 {
 
 .text-box {
     display: none;
+    overflow: auto;
 }
 
 .poster {

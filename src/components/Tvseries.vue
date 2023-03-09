@@ -97,6 +97,7 @@ h2 {
 
 .text-box {
     display: none;
+    overflow: auto;
 }
 
 ul:hover .poster-box {
