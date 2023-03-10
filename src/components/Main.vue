@@ -16,16 +16,6 @@ export default {
     methods: {
 
     },
-    computed: {
-        searchText() {
-            return this.store.search
-        }
-    },
-    watch: {
-        searchText(newvalue, Oldvalue) {
-            console.log('cambio di search', newvalue, Oldvalue)
-        }
-    }
 }
 </script>
 

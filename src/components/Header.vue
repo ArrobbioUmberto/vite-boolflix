@@ -46,11 +46,6 @@ export default {
                 });
         }
     },
-    computed: {
-        searchText() {
-            return this.store.search
-        }
-    },
 
 }
 </script>
