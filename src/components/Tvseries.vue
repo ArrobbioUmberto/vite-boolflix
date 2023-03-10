@@ -21,7 +21,7 @@ export default {
             }
         },
         getStarIcon(index) {
-            const voto = Math.ceil(this.Tvseries.vote_average / 2);
+            const voto = Math.round(this.Tvseries.vote_average / 2);
             switch (index) {
                 case 1:
                     return voto >= 1 ? 'full' : '';
