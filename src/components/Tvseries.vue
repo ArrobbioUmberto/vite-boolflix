@@ -51,7 +51,7 @@ export default {
                 <h2>{{ Tvseries.name }}</h2>
                 <h2>{{ Tvseries.original_name }}</h2>
                 <div class="votation">
-                    <h3>{{ Math.ceil(Tvseries.vote_average / 2) }}</h3>
+                    <h3>{{ Math.round(Tvseries.vote_average / 2) }}</h3>
                     <span>
                         <i v-for="n in 5" :key="n" :class="['fa', 'fa-star', getStarIcon(n)]"></i>
                     </span>
